@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 var entries = [
-  {slug:"how to pass class", body: "come to class. do your homework", created_at: "some date"},
-  {slug:"how to fail class", body: "play video games all day", created_at: "some date"}
+  {slug:"2//16", body: "Today I learned how to use Lagrange multipliers in calculus.", created_at: "some date"},
+  {slug:"3/2/16", body: "Today I learned about sql", created_at: "some date"}
 ];
 
 /* READ all: GET entries listing. */
 router.get('/', function(req, res, next) {
-  res.render('entries/index', { title: 'Blog', entries: entries });
+  res.render('entries/index', { title: 'Today I Learned', entries: entries });
 });
 
 /* CREATE entry form: GET /entries/new */
@@ -19,7 +19,7 @@ router.get('/new', function(req, res, next) {
 /*CREATE entry: POST /entries/ */
 router.post('/', function(req, res, next) {
   entries.push(req.body);
-  res.render('entries/index', { title: 'Blog', entries: entries });
+  res.render('entries/index', { title: 'Today I Learned', entries: entries });
 });
 
 /* UPDATE entry form: GET /entries/1/edit */
@@ -46,7 +46,7 @@ router.post('/:id', function(req, res, next) {
 router.get('/:id/delete', function(req, res, next) {
   var id = req.params.id
   entries = entries.slice(0,id).concat(entries.slice(id+1, entries.length));
-  res.render('entries/index', { title: 'Blog', entries: entries });
+  res.render('entries/index', { title: 'Today I Learned', entries: entries });
 });
 
 /* THIS NEEDS TO BE LAST or /new goes here rather than where it should */
