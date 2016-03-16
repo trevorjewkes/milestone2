@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var dbstring = "postgress://Trevor:pyroKing1990@localhost/entries";
+var dbstring = "postgress://postgres:pyroKing1990@localhost/entries";
 var string = process.env.DATABASE_URL || dbstring;
 app.use(orm.express(string, {
     define: function (db, models, next) {
