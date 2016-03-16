@@ -3,7 +3,7 @@ var router = express.Router();
 
 var entries = [
   {slug:"2/13/16", body: "Today I learned how to use Lagrange multipliers in calculus.", created_at: "some date"},
-  {slug:"3/2/16", body: "Today I learned about sql", created_at: "some date"}
+  {slug:"3/3/16", body: "Today I learned about sql", created_at: "some date"}
 ];
 
 /* READ all: GET entries listing. */
