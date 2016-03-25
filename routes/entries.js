@@ -26,7 +26,7 @@ router.get('/new', function(req, res, next) {
 /*CREATE entry: POST /entries/ */
 router.post('/', function(req, res, next) {
   req.db.driver.execQuery(
-    "INSERT INTO entries (slug,body) VALUES ('{" + req.body.slug + "}','" + req.body.body + "');",
+    "INSERT INTO entries (slug,body) VALUES ('" + req.body.slug + "','" + req.body.body + "');",
     function(err, data){
       if(err)
       {
