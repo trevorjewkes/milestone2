@@ -27,9 +27,9 @@ var orm = require('orm');
 var localstring = "postgres://postgres:pyroKing1990@localhost/entries";
 var dbstring = process.env.DATABASE_URL || localstring;
 app.use(orm.express(dbstring, {
-	define: function (db, models, next) {
-		next();
-	}
+    define: function (db, models, next) {
+        next();
+    }
 }));
 
 app.use('/', routes);

@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
         console.log(err);
       }
 
-      res.render('entries/index', { title: 'Today I Learned', entries: data });
+      res.render('entries/index', { title: 'Blog', entries: data });
     }
   );
 
@@ -26,7 +26,7 @@ router.get('/new', function(req, res, next) {
 /*CREATE entry: POST /entries/ */
 router.post('/', function(req, res, next) {
   req.db.driver.execQuery(
-    "INSERT INTO entries (slug,body) VALUES ('" + req.body.slug + "','" + req.body.body + "');",
+    "INSERT INTO entries (slug,body) VALUES ('{" + req.body.slug + "}','" + req.body.body + "');",
     function(err, data){
       if(err)
       {
@@ -42,7 +42,7 @@ router.post('/', function(req, res, next) {
         console.log(err);
       }
 
-      res.render('entries/index', { title: 'Today I Learned', entries: data });
+      res.render('entries/index', { title: 'Blog', entries: data });
     }
   );
 });
@@ -115,7 +115,7 @@ router.get('/:id/delete', function(req, res, next) {
         console.log(err);
       }
 
-      res.render('entries/index', { title: 'Today I Learned', entries: data });
+      res.render('entries/index', { title: 'Blog', entries: data });
     }
   );
 });
