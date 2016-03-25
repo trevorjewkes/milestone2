@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
         console.log(err);
       }
 
-      res.render('entries/index', { title: 'Blog', entries: data });
+      res.render('entries/index', { title: 'Today I Learned', entries: data });
     }
   );
 
@@ -42,7 +42,7 @@ router.post('/', function(req, res, next) {
         console.log(err);
       }
 
-      res.render('entries/index', { title: 'Blog', entries: data });
+      res.render('entries/index', { title: 'Today I Learned', entries: data });
     }
   );
 });
@@ -115,7 +115,7 @@ router.get('/:id/delete', function(req, res, next) {
         console.log(err);
       }
 
-      res.render('entries/index', { title: 'Blog', entries: data });
+      res.render('entries/index', { title: 'Today I Learned', entries: data });
     }
   );
 });
