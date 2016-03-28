@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-	res.render('login', {title: 'Login - Blog' });
+	res.render('login', {title: 'Login - Today I Learned' });
 });
 
 router.post('/login', function(req, res, next) {
@@ -24,7 +24,7 @@ router.post('/login', function(req, res, next) {
 			}
 
 			sha1sum.update(req.body.password);
-			var hashed_inpute = sha1sum.digest('hex');
+			var hashed_input = sha1sum.digest('hex');
 
 			if(hashed_input == data[0].password)
 			{
